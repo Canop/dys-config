@@ -29,11 +29,6 @@ set so=5
 
 set showcmd
 
-" rename tmux panel for vim (far from perfect but I didn't find anything better)
-autocmd BufReadPost,FileReadPost,BufNewFile * call system("tmux rename-window " . expand("%:t"))
-let tmuxtitle = system("tmux display-message -p '#W'")
-autocmd VimLeave * call system("tmux rename-window " . shellescape(tmuxtitle))
-
 " display current markdown file as HTML in browser
 nmap <Leader>md <Esc>:!grip -b %<CR><CR>
 
