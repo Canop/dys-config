@@ -1,6 +1,8 @@
 execute pathogen#infect()
 syntax enable
 
+autocmd FileType gradle setlocal shiftwidth=2 tabstop=2
+
 " color scheme patine can be found at https://github.com/Canop/patine
 colorscheme patine
 
@@ -26,10 +28,18 @@ nmap <Leader>cl yiwoconsole.log('<c-r>":', <c-r>");<Esc>^
 " ensures there's at least 5 lines visible around the current one
 set so=5
 
+" diff unsaved vs saved file
+nnoremap <Leader>do :DiffOrig<cr>
 
 set showcmd
 
+" to enable char marks instead of line marks
+" Build mark a: ma
+" Go to mark a : 'a
+nnoremap ' `
+
 " display current markdown file as HTML in browser
+" (grip must be installed)
 nmap <Leader>md <Esc>:!grip -b %<CR><CR>
 
 " surround current (w|W)ord with quotes or code marks
@@ -40,9 +50,6 @@ nmap <Leader>Q ciW""<Esc>P
 
 " gp selects the last selection
 nnoremap gp `[v`]
-
-" paste at end of line then enter insert mode
-:nmap , $pa
 
 " open a file in current file's directory
 map <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
