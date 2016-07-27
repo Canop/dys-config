@@ -1,0 +1,54 @@
+execute pathogen#infect()
+syntax enable
+
+" color scheme patine can be found at https://github.com/Canop/patine
+colorscheme patine
+
+filetype plugin indent on
+
+set runtimepath^=~/.vim/bundle/ctrlp.vim
+let g:ctrlp_custom_ignore = 'node_modules\|\.git\|static\|build|\*\.concat'
+let mapleader=","
+
+set incsearch
+set hlsearch
+nnoremap <CR> :nohlsearch<CR><CR>
+
+set t_Co=256
+
+let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_autoclose_preview_window_after_insertion = 1
+
+
+" console.log word under cursor
+nmap <Leader>cl yiwoconsole.log('<c-r>":', <c-r>");<Esc>^
+
+" ensures there's at least 5 lines visible around the current one
+set so=5
+
+
+set showcmd
+
+" rename tmux panel for vim (far from perfect but I didn't find anything better)
+autocmd BufReadPost,FileReadPost,BufNewFile * call system("tmux rename-window " . expand("%:t"))
+let tmuxtitle = system("tmux display-message -p '#W'")
+autocmd VimLeave * call system("tmux rename-window " . shellescape(tmuxtitle))
+
+" display current markdown file as HTML in browser
+nmap <Leader>md <Esc>:!grip -b %<CR><CR>
+
+" surround current (w|W)ord with quotes or code marks
+nmap <Leader>k ciw``<Esc>P
+nmap <Leader>q ciw""<Esc>P
+nmap <Leader>K ciW``<Esc>P
+nmap <Leader>Q ciW""<Esc>P
+
+" gp selects the last selection
+nnoremap gp `[v`]
+
+" paste at end of line then enter insert mode
+:nmap , $pa
+
+" open a file in current file's directory
+map <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
+map <Leader>s :split <C-R>=expand("%:p:h") . "/" <CR>
