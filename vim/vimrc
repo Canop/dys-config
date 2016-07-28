@@ -58,3 +58,6 @@ map <Leader>s :split <C-R>=expand("%:p:h") . "/" <CR>
 " prevent accidentally entering ex mode
 map q: <Nop>
 nnoremap Q <nop>
+
+" speed up searches in node projects
+set wildignore+=**/node_modules/**
