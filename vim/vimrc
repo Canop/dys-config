@@ -43,10 +43,12 @@ nnoremap ' `
 nmap <Leader>md <Esc>:!grip -b %<CR><CR>
 
 " surround current (w|W)ord with quotes or code marks
-nmap <Leader>k ciw``<Esc>P
-nmap <Leader>q ciw""<Esc>P
-nmap <Leader>K ciW``<Esc>P
-nmap <Leader>Q ciW""<Esc>P
+nnoremap <Leader>k ciw``<Esc>P
+vnoremap <Leader>k :s/\%V\(.*\)\%V/`\1`/<Esc>
+nnoremap <Leader>q ciw""<Esc>P
+vnoremap <Leader>q :s/\%V\(.*\)\%V/"\1"/<Esc>
+nnoremap <Leader>K ciW``<Esc>P
+nnoremap <Leader>Q ciW""<Esc>P
 
 " gp selects the last selection
 nnoremap gp `[v`]
@@ -61,3 +63,19 @@ nnoremap Q <nop>
 
 " speed up searches in node projects
 set wildignore+=**/node_modules/**
+
+" jk or kj in insert mode exit the insert mode
+imap jk <C-[>
+imap kj <C-[>
+
+" easier buffer switching
+nnoremap <Tab> :b#<CR>
+
+nnoremap <Leader>p :<C-u>CtrlP<CR>
+nnoremap <Leader>b :<C-u>CtrlPBuffer<CR>
+nnoremap <Leader>r :<C-u>CtrlPMRU<CR>
+
+inoremap {      {}<Left>
+inoremap {<CR>  {<CR>}<Esc>O
+inoremap {{     {
+inoremap {}     {}
