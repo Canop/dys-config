@@ -15,6 +15,9 @@ let mapleader=","
 set incsearch
 set hlsearch
 nnoremap <CR> :nohlsearch<CR><CR>
+nnoremap i :nohlsearch<CR>i
+nnoremap c :nohlsearch<CR>c
+nnoremap a :nohlsearch<CR>a
 
 set t_Co=256
 
