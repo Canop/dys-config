@@ -78,7 +78,7 @@ nnoremap <Leader>p :<C-u>CtrlP<CR>
 nnoremap <Leader>b :<C-u>CtrlPBuffer<CR>
 nnoremap <Leader>r :<C-u>CtrlPMRU<CR>
 
-inoremap {      {}<Left>
-inoremap {<CR>  {<CR>}<Esc>O
-inoremap {{     {
-inoremap {}     {}
+" inoremap {      {}<Left>
+" inoremap {<CR>  {<CR>}<Esc>O
+" inoremap {{     {
+" inoremap {}     {}
