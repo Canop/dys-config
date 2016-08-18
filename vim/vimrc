@@ -72,7 +72,7 @@ imap jk <C-[>
 imap kj <C-[>
 
 " easier buffer switching
-nnoremap <Tab> :b#<CR>
+nnoremap <Tab> :w<CR>:b#<CR>
 
 nnoremap <Leader>p :<C-u>CtrlP<CR>
 nnoremap <Leader>b :<C-u>CtrlPBuffer<CR>
