@@ -84,6 +84,7 @@ nnoremap <Leader>p :<C-u>CtrlP<CR>
 nnoremap <Leader>b :<C-u>CtrlPBuffer<CR>
 nnoremap <Leader>r :<C-u>CtrlPMRU<CR>
 
+" adds an empty line before or below the current one
 nmap oo o<Esc>k
 nmap OO O<Esc>j
 
@@ -91,6 +92,9 @@ nmap OO O<Esc>j
 " inoremap {<CR>  {<CR>}<Esc>O
 " inoremap {{     {
 " inoremap {}     {}
+
+"Switch to current dir
+nnoremap <Leader>cd :cd %:p:h<cr>
 
 " I always go to that file...
 nmap <Leader>t :e ~/todo.txt<CR>
