@@ -10,7 +10,10 @@ filetype plugin indent on
 
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 let g:ctrlp_custom_ignore = 'node_modules\|\.git\|static\|build|\*\.concat'
-let mapleader=","
+" let mapleader=","
+let mapleader="\<space>"
+
+set updatetime=250
 
 set incsearch
 set hlsearch
@@ -21,9 +24,12 @@ nnoremap a :nohlsearch<CR>a
 
 set t_Co=256
 
+" for vim-airline
+set laststatus=2
+let g:airline_powerline_fonts = 1
+
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_autoclose_preview_window_after_insertion = 1
-
 
 " console.log word under cursor
 nmap <Leader>cl yiwoconsole.log('<c-r>":', <c-r>");<Esc>^
@@ -32,7 +38,9 @@ nmap <Leader>cl yiwoconsole.log('<c-r>":', <c-r>");<Esc>^
 set so=5
 
 " diff unsaved vs saved file
+command DiffOrig let g:diffline = line('.') | vert new | set bt=nofile | r # | 0d_ | diffthis | :exe "norm! ".g:diffline."G" | wincmd p | diffthis | wincmd p
 nnoremap <Leader>do :DiffOrig<cr>
+nnoremap <leader>dc :q<cr>:diffoff<cr>:exe "norm! ".g:diffline."G"<cr>
 
 set showcmd
 
@@ -45,6 +53,7 @@ nnoremap ' `
 " (grip must be installed)
 nmap <Leader>md <Esc>:!grip -b %<CR><CR>
 
+" markdown edition:
 " surround current (w|W)ord with quotes or code marks
 nnoremap <Leader>k ciw``<Esc>P
 vnoremap <Leader>k :s/\%V\(.*\)\%V/`\1`/<Esc>
@@ -57,7 +66,7 @@ nnoremap <Leader>Q ciW""<Esc>P
 nnoremap gp `[v`]
 
 " open a file in current file's directory
-map <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
+map <Leader>e :w<CR>:e <C-R>=expand("%:p:h") . "/" <CR>
 map <Leader>s :split <C-R>=expand("%:p:h") . "/" <CR>
 
 " find current word in current (adjustable) directory
@@ -72,29 +81,23 @@ nnoremap Q <nop>
 
 " speed up searches in node projects
 set wildignore+=**/node_modules/**
-
-" jk or kj in insert mode exit the insert mode
-imap jk <C-[>
-imap kj <C-[>
+set wildignore+=**/build/**
 
 " easier buffer switching
 nnoremap <Tab> :w<CR>:b#<CR>
-
-nnoremap <Leader>p :<C-u>CtrlP<CR>
-nnoremap <Leader>b :<C-u>CtrlPBuffer<CR>
-nnoremap <Leader>r :<C-u>CtrlPMRU<CR>
+nnoremap <C-Tab> :w<CR>:b3<CR>
+" shows the list of buffers and let you choose one
+nnoremap <leader>b :buffers<CR>:buffer<space>
 
 " adds an empty line before or below the current one
 nmap oo o<Esc>k
 nmap OO O<Esc>j
-
-" inoremap {      {}<Left>
-" inoremap {<CR>  {<CR>}<Esc>O
-" inoremap {{     {
-" inoremap {}     {}
 
 "Switch to current dir
 nnoremap <Leader>cd :cd %:p:h<cr>
 
 " I always go to that file...
 nmap <Leader>t :e ~/todo.txt<CR>
+
+" remove trailing spaces on save
+autocmd BufWritePre *.py,*.js,*.hs,*.rs,*.html,*.css,*.scss,*.java :%s/\s\+$//e
