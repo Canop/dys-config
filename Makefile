@@ -1,7 +1,10 @@
 
-.PHONY: clean install vim
+.PHONY: clean install vim tmux
 
-install: vim
+install: vim tmux
 
 vim: ./vim/vimrc
 	cp $< ~/.vim/
+
+tmux: ./tmux/tmux.conf
+	cp $< ~/.tmux.conf
