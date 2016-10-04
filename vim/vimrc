@@ -27,6 +27,7 @@ set t_Co=256
 " for vim-airline
 set laststatus=2
 let g:airline_powerline_fonts = 1
+let g:airline_theme='distinguished'
 
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_autoclose_preview_window_after_insertion = 1
@@ -100,4 +101,4 @@ nnoremap <Leader>cd :cd %:p:h<cr>
 nmap <Leader>t :e ~/todo.txt<CR>
 
 " remove trailing spaces on save
-autocmd BufWritePre *.py,*.js,*.hs,*.rs,*.html,*.css,*.scss,*.java :%s/\s\+$//e
+autocmd BufWritePre *.py,*.js,*.txt,*.md,*.hs,*.rs,*.html,*.css,*.less,*.scss,*.java :%s/\s\+$//e
