@@ -28,6 +28,8 @@ set t_Co=256
 set laststatus=2
 let g:airline_powerline_fonts = 1
 let g:airline_theme='distinguished'
+" disable mix-indent-file check (too buggy)
+let g:airline#extensions#whitespace#checks = [ 'indent', 'trailing', 'long']
 
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_autoclose_preview_window_after_insertion = 1
@@ -71,10 +73,10 @@ map <Leader>e :w<CR>:e <C-R>=expand("%:p:h") . "/" <CR>
 map <Leader>s :split <C-R>=expand("%:p:h") . "/" <CR>
 
 " find current word in current (adjustable) directory
-map <Leader>f yiw:vim /\<<C-R>"\>/ <C-R>=expand("%:p:h") . "/" <CR>
+map <Leader>f :w<CR>yiw:vim /\<<C-R>"\>/ <C-R>=expand("%:p:h") . "/" <CR>
 
 " find current word in current directory
-map <Leader>ff yiw:vim /\<<C-R>"\>/ <C-R>=expand("%:p:h") . "/*" <CR><CR>
+map <Leader>ff :w<CR>yiw:vim /\<<C-R>"\>/ <C-R>=expand("%:p:h") . "/*" <CR><CR>
 
 " prevent accidentally entering ex mode
 map q: <Nop>
@@ -88,7 +90,7 @@ set wildignore+=**/build/**
 nnoremap <Tab> :w<CR>:b#<CR>
 nnoremap <C-Tab> :w<CR>:b3<CR>
 " shows the list of buffers and let you choose one
-nnoremap <leader>b :buffers<CR>:buffer<space>
+nnoremap <leader>b :w<CR>:buffers<CR>:buffer<space>
 
 " adds an empty line before or below the current one
 nmap oo o<Esc>k
