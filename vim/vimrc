@@ -3,13 +3,22 @@ syntax enable
 
 autocmd FileType gradle setlocal shiftwidth=2 tabstop=2
 
+set undofile
+set undodir=$HOME/.vim/undo
+
 " color scheme patine can be found at https://github.com/Canop/patine
 colorscheme patine
 
 filetype plugin indent on
 
+" fzf, installed through vim-plug
+" Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+" Plug 'junegunn/fzf.vim'
+
 set runtimepath^=~/.vim/bundle/ctrlp.vim
+let g:ctrlp_max_files=0
 let g:ctrlp_custom_ignore = 'node_modules\|\.git\|static\|build|\*\.concat'
+
 " let mapleader=","
 let mapleader="\<space>"
 
