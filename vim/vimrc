@@ -22,6 +22,9 @@ let g:ctrlp_custom_ignore = 'node_modules\|\.git\|static\|build|\*\.concat'
 " let mapleader=","
 let mapleader="\<space>"
 
+" Eliminate delay when switching modes
+set ttimeoutlen=0
+
 set updatetime=250
 
 set incsearch
@@ -61,6 +64,7 @@ set showcmd
 " Go to mark a : 'a
 nnoremap ' `
 
+
 " display current markdown file as HTML in browser
 " (grip must be installed)
 nmap <Leader>md <Esc>:!grip -b %<CR><CR>
@@ -94,6 +98,13 @@ nnoremap Q <nop>
 " speed up searches in node projects
 set wildignore+=**/node_modules/**
 set wildignore+=**/build/**
+set wildignore+=*.class,*.so
+
+" Auto save changes before switching buffer
+set autowrite
+
+" Keep the cursor in the same place when switching buffers
+set nostartofline
 
 " easier buffer switching
 nnoremap <Tab> :w<CR>:b#<CR>
@@ -101,9 +112,20 @@ nnoremap <C-Tab> :w<CR>:b3<CR>
 " shows the list of buffers and let you choose one
 nnoremap <leader>b :w<CR>:buffers<CR>:buffer<space>
 
-" adds an empty line before or below the current one
+" adds an empty line before the current one (don't make it a comment line if
+" the current one is commented)
+nmap OO ko<Esc>j
+" adds an empty line below the current one
 nmap oo o<Esc>k
-nmap OO O<Esc>j
+
+" Delete line but preserve the space
+nnoremap dD S<Esc>
+
+" Make `Y` work from the cursor to the end of line
+nnoremap Y y$
+
+" Use K to join current line with line above, just like J does with line below
+nnoremap K kJ
 
 "Switch to current dir
 nnoremap <Leader>cd :cd %:p:h<cr>
