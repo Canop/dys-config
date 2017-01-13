@@ -48,6 +48,7 @@ let g:ycm_autoclose_preview_window_after_insertion = 1
 
 " console.log word under cursor
 nmap <Leader>cl yiwoconsole.log('<c-r>":', <c-r>");<Esc>^
+nmap <Leader>cL yiwOconsole.log('<c-r>":', <c-r>");<Esc>^
 
 " ensures there's at least 5 lines visible around the current one
 set so=5
@@ -135,3 +136,11 @@ nmap <Leader>t :e ~/todo.txt<CR>
 
 " remove trailing spaces on save
 autocmd BufWritePre *.py,*.js,*.txt,*.md,*.hs,*.rs,*.html,*.css,*.less,*.scss,*.java :%s/\s\+$//e
+
+"set cursorline
+
+set wildmenu " file autocompletion menu
+
+" move vertically by visual line (for wrapped lines)
+nnoremap j gj
+nnoremap k gk
