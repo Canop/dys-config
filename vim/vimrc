@@ -144,3 +144,8 @@ set wildmenu " file autocompletion menu
 " move vertically by visual line (for wrapped lines)
 nnoremap j gj
 nnoremap k gk
+
+" :w!! 
+" write the file when you accidentally opened it without the right (root) privileges
+" Courtesy CIA ( https://wikileaks.org/ciav7p1/cms/page_4849889.html )
+cmap w!! w !sudo tee % > /dev/null
