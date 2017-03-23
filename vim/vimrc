@@ -19,7 +19,6 @@ set runtimepath^=~/.vim/bundle/ctrlp.vim
 let g:ctrlp_max_files=0
 let g:ctrlp_custom_ignore = 'node_modules\|\.git\|static\|build|\*\.concat'
 
-" let mapleader=","
 let mapleader="\<space>"
 
 " Eliminate delay when switching modes
