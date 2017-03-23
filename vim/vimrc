@@ -149,6 +149,10 @@ nnoremap k gk
 " Courtesy CIA ( https://wikileaks.org/ciav7p1/cms/page_4849889.html )
 cmap w!! w !sudo tee % > /dev/null
 
+" indent/dedent shortcut for the current line
+nmap < V<
+nmap > V>
+
 " Shortcuts relevant for my current projects
 noremap <Leader>i :w<CR>:!./install.sh<CR>
 noremap <Leader>me :w<CR>:e ~/dev/miaou/
