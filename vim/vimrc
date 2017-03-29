@@ -132,7 +132,8 @@ nnoremap K kJ
 nnoremap <Leader>cd :cd %:p:h<cr>
 
 " I always go to that file...
-nmap <Leader>t :e ~/todo.txt<CR>
+nmap <Leader>tt :e ~/todo.txt<CR>
+nmap <Leader>t :b ~/todo.txt<CR>
 
 " remove trailing spaces on save
 autocmd BufWritePre *.py,*.js,*.txt,*.md,*.hs,*.rs,*.html,*.css,*.less,*.scss,*.java :%s/\s\+$//e
