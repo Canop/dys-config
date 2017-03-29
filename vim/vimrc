@@ -19,7 +19,6 @@ set runtimepath^=~/.vim/bundle/ctrlp.vim
 let g:ctrlp_max_files=0
 let g:ctrlp_custom_ignore = 'node_modules\|\.git\|static\|build|\*\.concat'
 
-" let mapleader=","
 let mapleader="\<space>"
 
 " Eliminate delay when switching modes
@@ -150,6 +149,10 @@ nnoremap k gk
 " write the file when you accidentally opened it without the right (root) privileges
 " Courtesy CIA ( https://wikileaks.org/ciav7p1/cms/page_4849889.html )
 cmap w!! w !sudo tee % > /dev/null
+
+" indent/dedent shortcut for the current line
+nmap < V<
+nmap > V>
 
 " Shortcuts relevant for my current projects
 noremap <Leader>i :w<CR>:!./install.sh<CR>
