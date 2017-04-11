@@ -91,6 +91,9 @@ map <Leader>f :w<CR>yiw:vim /\<<C-R>"\>/ <C-R>=expand("%:p:h") . "/" <CR>
 " find current word in current directory
 map <Leader>ff :w<CR>yiw:vim /\<<C-R>"\>/ <C-R>=expand("%:p:h") . "/*" <CR><CR>
 
+" go to next file
+nmap ù :cn<CR>
+
 " prevent accidentally entering ex mode
 map q: <Nop>
 nnoremap Q <nop>
