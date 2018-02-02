@@ -1,7 +1,11 @@
 execute pathogen#infect()
 syntax enable
 
+" removing those swap files
+set nobackup
+
 autocmd FileType gradle setlocal shiftwidth=2 tabstop=2
+autocmd FileType pug setlocal shiftwidth=2 tabstop=2
 
 set undofile
 set undodir=$HOME/.vim/undo
@@ -101,7 +105,7 @@ nnoremap Q <nop>
 " speed up searches in node projects
 set wildignore+=**/node_modules/**
 set wildignore+=**/build/**
-set wildignore+=*.class,*.so
+set wildignore+=*.class,*.so,*.csv
 
 " Auto save changes before switching buffer
 set autowrite
