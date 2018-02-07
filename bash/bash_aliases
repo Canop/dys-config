@@ -1,0 +1,6 @@
+alias mdb="psql -U miaou -W miaou"
+alias shd="ssh dystroy.org"
+alias :e="nvim"
+alias todo=":e ~/todo.txt"
+export GIT_REPO_DIR="$HOME/dev"
+eval $(thefuck --alias)
