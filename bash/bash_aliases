@@ -5,5 +5,8 @@ alias sh2="ssh dseguret@dev2.keods.net"
 alias :e=nvim
 alias :q=exit
 alias todo=":e ~/todo.txt"
-export GIT_REPO_DIR="$HOME/dev"
 eval $(thefuck --alias)
+
+# scm-breeze
+[ -s "/home/dys/.scm_breeze/scm_breeze.sh" ] && source "/home/dys/.scm_breeze/scm_breeze.sh"
+export GIT_REPO_DIR="$HOME/dev"
