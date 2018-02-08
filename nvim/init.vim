@@ -46,6 +46,10 @@ set nojoinspaces
 " Keep the cursor in the same place when switching buffers
 set nostartofline
 
+" clear search highlight on esc
+nnoremap <esc> :noh<return><esc>
+
+set inccommand=nosplit
 
 """"""""""""""""""""" Files
 
@@ -60,6 +64,8 @@ set wildignore+=*.class,*.so,*.csv
 " Auto save changes before switching buffer
 set autowrite
 
+" remove trailing spaces on save
+autocmd BufWritePre *.py,*.js,*.txt,*.md,*.hs,*.rs,*.html,*.css,*.less,*.scss,*.java :%s/\s\+$//e
 
 """""""""""""""""""" Keys & Shortcuts
 
@@ -90,7 +96,7 @@ nnoremap gp `[v`]
 
 " open a file in current file's directory
 map <Leader>e :w<CR>:e <C-R>=expand("%:p:h") . "/" <CR>
-map <Leader>s :split <C-R>=expand("%:p:h") . "/" <CR>
+map <Leader>sp :split <C-R>=expand("%:p:h") . "/" <CR>
 
 " find current word in current (adjustable) directory
 map <Leader>f :w<CR>yiw:vim /\<<C-R>"\>/ <C-R>=expand("%:p:h") . "/" <CR>
