@@ -52,6 +52,11 @@ nnoremap <esc> :noh<return><esc>
 
 set inccommand=nosplit
 
+""""""""""""""""""""" Terminal
+
+" Make escape work in the Neovim terminal.
+tnoremap <Esc> <C-\><C-n>
+
 """"""""""""""""""""" Files
 
 autocmd FileType gradle setlocal shiftwidth=2 tabstop=2
@@ -130,7 +135,6 @@ nnoremap <Leader>cd :cd %:p:h<cr>
 
 " I always go to that file...
 nmap <Leader>tt :e ~/todo.txt<CR>
-nmap <Leader>t :b ~/todo.txt<CR>
 
 " :w!! 
 " write the file when you accidentally opened it without the right (root) privileges
