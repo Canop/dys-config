@@ -13,7 +13,8 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'https://github.com/airblade/vim-gitgutter'
 Plug 'https://github.com/Canop/patine'
 Plug 'https://github.com/tpope/vim-fugitive'
-Plug 'https://github.com/kern/vim-es7'
+Plug 'https://github.com/othree/yajs.vim'
+Plug 'https://github.com/othree/es.next.syntax.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 call plug#end()
 
@@ -77,10 +78,6 @@ nnoremap <c-p> :FZF<cr>
 " console.log word under cursor
 nmap <Leader>cl yiwoconsole.log('<c-r>":', <c-r>");<Esc>^
 nmap <Leader>cL yiwOconsole.log('<c-r>":', <c-r>");<Esc>^
-
-" display current markdown file as HTML in browser
-" (grip must be installed)
-nmap <Leader>md <Esc>:!grip -b %<CR><CR>
 
 " markdown edition:
 " surround current (w|W)ord with quotes or code marks
@@ -148,6 +145,13 @@ nmap > V>
 noremap <Leader>i :w<CR>:!./install.sh<CR>
 noremap <Leader>me :w<CR>:e ~/dev/miaou/
 
+"""""""""""""""""""" Markdown
+
+" display current markdown file as HTML in browser
+" (grip must be installed)
+nmap <Leader>md <Esc>:!grip -b %<CR><CR>
+
+nmap <Leader>-- yyp:s/./-/g<CR><Esc>
 
 """""""""""""""""""" Git
 
