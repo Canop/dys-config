@@ -53,6 +53,10 @@ nnoremap <esc> :noh<return><esc>
 
 set inccommand=nosplit
 
+""""""""""""""""""""" Deoplete
+
+let g:deoplete#enable_at_startup = 1
+
 """"""""""""""""""""" Terminal
 
 " Make escape work in the Neovim terminal.
