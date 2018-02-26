@@ -15,6 +15,7 @@ Plug 'https://github.com/Canop/patine'
 Plug 'https://github.com/tpope/vim-fugitive'
 Plug 'https://github.com/kern/vim-es7'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'Shougo/deoplete.nvim'
 call plug#end()
 
 
@@ -50,6 +51,10 @@ set nostartofline
 nnoremap <esc> :noh<return><esc>
 
 set inccommand=nosplit
+
+""""""""""""""""""""" Deoplete
+
+let g:deoplete#enable_at_startup = 1
 
 """"""""""""""""""""" Terminal
 
