@@ -16,6 +16,7 @@ Plug 'https://github.com/tpope/vim-fugitive'
 Plug 'https://github.com/othree/yajs.vim'
 Plug 'https://github.com/othree/es.next.syntax.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 call plug#end()
 
 
