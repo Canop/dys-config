@@ -118,7 +118,8 @@ nnoremap <Leader>ff :w<CR>yiw:vim /\<<C-R>"\>/ <C-R>=expand("%:p:h") . "/*" <CR>
 nnoremap ù :cn<CR>
 
 " easier buffer switching
-nnoremap <Tab> :w<CR>:b#<CR>
+nnoremap <Tab> :b#<CR>
+" nnoremap <Tab> :w<CR>:b#<CR>
 nnoremap <C-Tab> :w<CR>:b3<CR>
 " shows the list of buffers and let you choose one
 nnoremap <leader>b :w<CR>:buffers<CR>:buffer<space>
