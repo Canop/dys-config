@@ -86,7 +86,7 @@ augroup end
 let mapleader="\<space>"
 
 " find files using FZF
-nnoremap <c-p> :FZF<cr>
+nnoremap <c-p> :w<cr>:FZF<cr>
 
 " console.log word under cursor
 nnoremap <Leader>cl yiwoconsole.log('<c-r>":', <c-r>");<Esc>^
