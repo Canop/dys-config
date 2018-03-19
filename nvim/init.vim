@@ -76,7 +76,10 @@ set wildignore+=*.class,*.so,*.csv
 set autowrite
 
 " remove trailing spaces on save
-autocmd BufWritePre *.py,*.js,*.txt,*.md,*.hs,*.rs,*.html,*.css,*.less,*.scss,*.java :%s/\s\+$//e
+augroup autotrim
+	autocmd!
+	autocmd BufWritePre *.py,*.js,*.txt,*.md,*.hs,*.rs,*.html,*.css,*.less,*.scss,*.java :%s/\s\+$//e
+augroup end
 
 """""""""""""""""""" Keys & Shortcuts
 
@@ -86,8 +89,8 @@ let mapleader="\<space>"
 nnoremap <c-p> :FZF<cr>
 
 " console.log word under cursor
-nmap <Leader>cl yiwoconsole.log('<c-r>":', <c-r>");<Esc>^
-nmap <Leader>cL yiwOconsole.log('<c-r>":', <c-r>");<Esc>^
+nnoremap <Leader>cl yiwoconsole.log('<c-r>":', <c-r>");<Esc>^
+nnoremap <Leader>cL yiwOconsole.log('<c-r>":', <c-r>");<Esc>^
 
 " markdown edition:
 " surround current (w|W)ord with quotes or code marks
@@ -102,17 +105,17 @@ nnoremap <Leader>Q ciW""<Esc>P
 nnoremap gp `[v`]
 
 " open a file in current file's directory
-map <Leader>e :w<CR>:e <C-R>=expand("%:p:h") . "/" <CR>
-map <Leader>sp :split <C-R>=expand("%:p:h") . "/" <CR>
+nnoremap <Leader>e :w<CR>:e <C-R>=expand("%:p:h") . "/" <CR>
+nnoremap <Leader>sp :split <C-R>=expand("%:p:h") . "/" <CR>
 
 " find current word in current (adjustable) directory
-map <Leader>f :w<CR>yiw:vim /\<<C-R>"\>/ <C-R>=expand("%:p:h") . "/" <CR>
+nnoremap <Leader>f :w<CR>yiw:vim /\<<C-R>"\>/ <C-R>=expand("%:p:h") . "/" <CR>
 
 " find current word in current directory
-map <Leader>ff :w<CR>yiw:vim /\<<C-R>"\>/ <C-R>=expand("%:p:h") . "/*" <CR><CR>
+nnoremap <Leader>ff :w<CR>yiw:vim /\<<C-R>"\>/ <C-R>=expand("%:p:h") . "/*" <CR><CR>
 
 " go to next file
-nmap ù :cn<CR>
+nnoremap ù :cn<CR>
 
 " easier buffer switching
 nnoremap <Tab> :b#<CR>
@@ -123,9 +126,9 @@ nnoremap <leader>b :w<CR>:buffers<CR>:buffer<space>
 
 " adds an empty line before the current one (don't make it a comment line if
 " the current one is commented)
-nmap OO ko<Esc>j
+nnoremap OO ko<Esc>j
 " adds an empty line below the current one
-nmap oo o<Esc>k
+nnoremap oo o<Esc>k
 
 " Delete line but preserve the space
 nnoremap dD S<Esc>
@@ -140,7 +143,7 @@ nnoremap K kJ
 nnoremap <Leader>cd :cd %:p:h<cr>
 
 " I always go to that file...
-nmap <Leader>tt :e ~/todo.txt<CR>
+nnoremap <Leader>tt :e ~/todo.txt<CR>
 
 " :w!! 
 " write the file when you accidentally opened it without the right (root) privileges
@@ -148,20 +151,20 @@ nmap <Leader>tt :e ~/todo.txt<CR>
 cmap w!! w !sudo tee % > /dev/null
 
 " indent/dedent shortcut for the current line
-nmap < V<
-nmap > V>
+nnoremap < V<
+nnoremap > V>
 
 " Shortcuts relevant for my current projects
-noremap <Leader>i :w<CR>:!./install.sh<CR>
-noremap <Leader>me :w<CR>:e ~/dev/miaou/
+nnoremap <Leader>i :w<CR>:!./install.sh<CR>
+nnoremap <Leader>me :w<CR>:e ~/dev/miaou/
 
 """""""""""""""""""" Markdown
 
 " display current markdown file as HTML in browser
 " (grip must be installed)
-nmap <Leader>md <Esc>:!grip -b %<CR><CR>
+nnoremap <Leader>md <Esc>:!grip -b %<CR><CR>
 
-nmap <Leader>-- yyp:s/./-/g<CR><Esc>
+nnoremap <Leader>-- yyp:s/./-/g<CR><Esc>
 
 """""""""""""""""""" Git
 
