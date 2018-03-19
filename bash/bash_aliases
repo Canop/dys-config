@@ -6,6 +6,7 @@ alias :e=nvim
 alias :q=exit
 alias todo=":e ~/todo.txt"
 eval $(thefuck --alias)
+alias :c="rm ~/.local/share/nvim/swap/*"
 
 # scm-breeze
 [ -s "/home/dys/.scm_breeze/scm_breeze.sh" ] && source "/home/dys/.scm_breeze/scm_breeze.sh"
