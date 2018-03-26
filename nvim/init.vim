@@ -54,10 +54,21 @@ nnoremap <esc> :noh<return><esc>
 
 set inccommand=nosplit
 
+set history=1000
+
 """"""""""""""""""""" For Terminator
 
 ":let $NVIM_TUI_ENABLE_CURSOR_SHAPE=0
 set guicursor=
+
+""""""""""""""""""""" Search
+
+" case insensitive search...
+set ignorecase
+
+" ... unless there's some uppercase in the pattern
+set smartcase
+>>>>>>> origin/master
 
 """"""""""""""""""""" Deoplete
 
