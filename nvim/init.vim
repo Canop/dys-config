@@ -53,6 +53,16 @@ nnoremap <esc> :noh<return><esc>
 
 set inccommand=nosplit
 
+set history=1000
+
+""""""""""""""""""""" Search
+
+" case insensitive search...
+set ignorecase
+
+" ... unless there's some uppercase in the pattern
+set smartcase
+
 """"""""""""""""""""" Deoplete
 
 let g:deoplete#enable_at_startup = 1
