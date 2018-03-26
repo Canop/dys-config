@@ -68,7 +68,6 @@ set ignorecase
 
 " ... unless there's some uppercase in the pattern
 set smartcase
->>>>>>> origin/master
 
 """"""""""""""""""""" Deoplete
 
