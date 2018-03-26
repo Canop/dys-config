@@ -12,6 +12,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'https://github.com/airblade/vim-gitgutter'
 Plug 'https://github.com/Canop/patine'
+"Plug '~/dev/patine'
 Plug 'https://github.com/tpope/vim-fugitive'
 Plug 'https://github.com/othree/yajs.vim'
 Plug 'https://github.com/othree/es.next.syntax.vim'
@@ -52,6 +53,11 @@ set nostartofline
 nnoremap <esc> :noh<return><esc>
 
 set inccommand=nosplit
+
+""""""""""""""""""""" For Terminator
+
+":let $NVIM_TUI_ENABLE_CURSOR_SHAPE=0
+set guicursor=
 
 """"""""""""""""""""" Deoplete
 
