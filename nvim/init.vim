@@ -13,7 +13,8 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'https://github.com/airblade/vim-gitgutter'
 Plug 'https://github.com/Canop/patine'
 "Plug '~/dev/patine'
-Plug 'https://github.com/tpope/vim-fugitive'
+Plug 'https://github.com/tpope/vim-fugitive.git'
+Plug 'https://github.com/tpope/vim-abolish'
 Plug 'https://github.com/othree/yajs.vim'
 Plug 'https://github.com/othree/es.next.syntax.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -173,6 +174,10 @@ nnoremap > V>
 " Shortcuts relevant for my current projects
 nnoremap <Leader>i :w<CR>:!./install.sh<CR>
 nnoremap <Leader>me :w<CR>:e ~/dev/miaou/
+
+"""""""""""""""""""" Abolish
+
+cnoreabbrev S Subvert
 
 """""""""""""""""""" Markdown
 
