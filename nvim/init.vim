@@ -18,7 +18,9 @@ Plug 'https://github.com/tpope/vim-abolish'
 Plug 'https://github.com/othree/yajs.vim'
 Plug 'https://github.com/othree/es.next.syntax.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+"Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'rust-lang/rust.vim'
+Plug 'racer-rust/vim-racer'
 call plug#end()
 
 
@@ -65,10 +67,10 @@ set guicursor=
 """"""""""""""""""""" Search
 
 " case insensitive search...
-set ignorecase
+"set ignorecase
 
 " ... unless there's some uppercase in the pattern
-set smartcase
+"set smartcase
 
 """"""""""""""""""""" Deoplete
 
@@ -80,6 +82,8 @@ let g:deoplete#enable_at_startup = 1
 tnoremap <Esc> <C-\><C-n>
 
 """"""""""""""""""""" Files
+
+set hidden
 
 autocmd FileType gradle setlocal shiftwidth=2 tabstop=2
 autocmd FileType pug setlocal shiftwidth=2 tabstop=2
@@ -194,3 +198,11 @@ nnoremap <Leader>-- yyp:s/./-/g<CR><Esc>
 " nnoremap <Leader>do :DiffOrig<cr>
 " nnoremap <leader>dc :q<cr>:diffoff<cr>:exe "norm! ".g:diffline."G"<cr>
 
+"""""""""""""""""""" Rust
+
+let g:racer_experimental_completer = 1
+
+au FileType rust nmap gd <Plug>(rust-def)
+au FileType rust nmap gs <Plug>(rust-def-split)
+au FileType rust nmap gx <Plug>(rust-def-vertical)
+au FileType rust nmap <leader>gd <Plug>(rust-doc)
