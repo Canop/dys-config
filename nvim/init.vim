@@ -113,6 +113,9 @@ nnoremap <c-p> :w<cr>:FZF<cr>
 nnoremap <Leader>cl yiwoconsole.log('<c-r>":', <c-r>");<Esc>^
 nnoremap <Leader>cL yiwOconsole.log('<c-r>":', <c-r>");<Esc>^
 
+" and the same for rust...
+nnoremap <Leader>db yiwodebug!("<c-r>"={:?}", &<c-r>");<Esc>^
+
 " markdown edition:
 " surround current (w|W)ord with quotes or code marks
 nnoremap <Leader>k ciw``<Esc>P
