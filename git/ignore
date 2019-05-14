@@ -1,0 +1,15 @@
+# contains the patterns of files which should be ignored on all projects
+
+
+# My personal notes file
+dys-notes.md
+
+# traces & logs
+*.log
+
+# IDE metadata
+.idea/
+
+# edition byproducts
+*.swp
+
