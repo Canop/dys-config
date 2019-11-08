@@ -11,8 +11,8 @@ call plug#begin('~/.local/share/nvim/plugged')
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'https://github.com/airblade/vim-gitgutter'
-Plug 'https://github.com/Canop/patine'
-"Plug '~/dev/patine'
+"Plug 'https://github.com/Canop/patine'
+Plug '~/dev/patine'
 Plug 'https://github.com/tpope/vim-fugitive.git'
 Plug 'https://github.com/tpope/vim-abolish'
 Plug 'https://github.com/othree/yajs.vim'
@@ -140,10 +140,10 @@ nnoremap <Leader>f :w<CR>yiw:vim /\<<C-R>"\>/ <C-R>=expand("%:p:h") . "/" <CR>
 nnoremap <Leader>ff :w<CR>yiw:vim /\<<C-R>"\>/ <C-R>=expand("%:p:h") . "/*" <CR><CR>
 
 " go to next file
-nnoremap ù :cn<CR>
+nnoremap ù :w<CR>:cn<CR>
 
 " easier buffer switching
-nnoremap <Tab> :b#<CR>
+nnoremap <Tab> :w<CR>:b#<CR>
 " nnoremap <Tab> :w<CR>:b#<CR>
 nnoremap <C-Tab> :w<CR>:b3<CR>
 " shows the list of buffers and let you choose one
