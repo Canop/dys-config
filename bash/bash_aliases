@@ -4,12 +4,13 @@ alias sh1="ssh dseguret@dev1.keods.net"
 alias sh2="ssh dseguret@dev2.keods.net"
 alias :e=nvim
 alias :q=exit
-alias todo=":e ~/todo.txt"
-eval $(thefuck --alias)
 alias :c="rm ~/.local/share/nvim/swap/*"
+alias todo=":e ~/todo.txt"
 alias glp="git log --patch"
 alias cck="cargo watch -s 'cargo check --color always 2>&1 | head -n 50'"
 
 # scm-breeze
 [ -s "/home/dys/.scm_breeze/scm_breeze.sh" ] && source "/home/dys/.scm_breeze/scm_breeze.sh"
 export GIT_REPO_DIR="$HOME/dev"
+
+alias gd="br --conf ~/.config/broot/git-diff-conf.toml --git-status"

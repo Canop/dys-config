@@ -1,0 +1,10 @@
+[core]
+	excludesfile = /home/dys/.config/git/ignore
+[user]
+	name = Canop
+	email = cano.petrole@gmail.com
+[diff]
+	tool = meld
+	prompt = false
+[difftool]
+	prompt = false
