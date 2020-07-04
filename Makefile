@@ -1,10 +1,13 @@
 
-.PHONY: clean install vim tmux nvim bash git
+.PHONY: clean install vim tmux nvim bash git broot
 
 install: vim tmux nvim bash git
 
 # vim: ./vim/vimrc
 # 	cp $< ~/.vim/
+
+broot: ./broot/git-diff-conf.toml
+	cp $< ~/.config/broot/git-diff-conf.toml
 
 tmux: ./tmux/tmux.conf
 	cp $< ~/.tmux.conf

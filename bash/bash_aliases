@@ -13,4 +13,4 @@ alias cck="cargo watch -s 'cargo check --color always 2>&1 | head -n 50'"
 [ -s "/home/dys/.scm_breeze/scm_breeze.sh" ] && source "/home/dys/.scm_breeze/scm_breeze.sh"
 export GIT_REPO_DIR="$HOME/dev"
 
-alias gd="br --conf ~/.config/broot/git-diff-conf.toml --git-status"
+alias gg="br --conf ~/.config/broot/git-diff-conf.toml --git-status"
