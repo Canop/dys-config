@@ -1,7 +1,7 @@
 
 .PHONY: clean install vim tmux nvim bash git broot
 
-install: vim tmux nvim bash git
+install: vim tmux nvim bash git broot
 
 # vim: ./vim/vimrc
 # 	cp $< ~/.vim/
