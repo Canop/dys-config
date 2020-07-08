@@ -136,8 +136,11 @@ nnoremap <Leader>sp :split <C-R>=expand("%:p:h") . "/" <CR>
 " find current word in current (adjustable) directory
 nnoremap <Leader>f :w<CR>yiw:vim /\<<C-R>"\>/ <C-R>=expand("%:p:h") . "/" <CR>
 
-" find current word in current directory
+" find current word in current directory using vimgrep
 nnoremap <Leader>ff :w<CR>yiw:vim /\<<C-R>"\>/ <C-R>=expand("%:p:h") . "/*" <CR><CR>
+
+" find current word in current directory using ballish
+nnoremap <Leader>bb :w<CR>yiw:BallishGrepInRepository <C-R>"  <CR>
 
 " go to next file
 nnoremap ù :w<CR>:cn<CR>
