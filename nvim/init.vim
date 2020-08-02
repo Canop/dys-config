@@ -28,13 +28,16 @@ call plug#end()
 """""""""""""""""""" Colors
 
 colorscheme patine
- 
+
 " for vim-airline
 set laststatus=2
 let g:airline_powerline_fonts = 1
 let g:airline_theme='distinguished'
+let g:airline_section_x=''
+let g:airline#extensions#hunks#enabled=0
+let g:airline_detect_spell=0
+let g:airline#parts#ffenc#skip_expected_string='utf-8[unix]'
 let g:airline#extensions#whitespace#checks = [ 'indent', 'trailing', 'long']
-
 
 """"""""""""""""""""" Global Behavior
 
@@ -48,7 +51,7 @@ set updatetime=250
 set so=5
 
 " Prevents inserting two spaces after punctuation on a join (J)
-set nojoinspaces        
+set nojoinspaces
 
 " Keep the cursor in the same place when switching buffers
 set nostartofline
@@ -99,8 +102,8 @@ set autowrite
 
 " remove trailing spaces on save
 augroup autotrim
-	autocmd!
-	autocmd BufWritePre *.py,*.js,*.txt,*.md,*.hs,*.rs,*.html,*.css,*.less,*.scss,*.java :%s/\s\+$//e
+    autocmd!
+    autocmd BufWritePre *.vim,*.py,*.js,*.txt,*.md,*.hs,*.rs,*.html,*.css,*.less,*.scss,*.java :%s/\s\+$//e
 augroup end
 
 """""""""""""""""""" Keys & Shortcuts
@@ -139,6 +142,9 @@ nnoremap <Leader>f :w<CR>yiw:vim /\<<C-R>"\>/ <C-R>=expand("%:p:h") . "/" <CR>
 " find current word in current directory using vimgrep
 nnoremap <Leader>ff :w<CR>yiw:vim /\<<C-R>"\>/ <C-R>=expand("%:p:h") . "/*" <CR><CR>
 
+" find current word in current repository using gitgrep
+nnoremap <Leader>gg :w<CR>yiw:Ggrep <C-R>" <CR>
+
 " find current word in current directory using ballish
 nnoremap <Leader>bb :w<CR>yiw:BallishGrepInRepository <C-R>"  <CR>
 
@@ -173,7 +179,7 @@ nnoremap <Leader>cd :cd %:p:h<cr>
 " I always go to that file...
 nnoremap <Leader>tt :e ~/todo.txt<CR>
 
-" :w!! 
+" :w!!
 " write the file when you accidentally opened it without the right (root) privileges
 " Courtesy CIA ( https://wikileaks.org/ciav7p1/cms/page_4849889.html )
 cmap w!! w !sudo tee % > /dev/null
