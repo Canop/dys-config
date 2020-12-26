@@ -10,7 +10,13 @@ endif
 call plug#begin('~/.local/share/nvim/plugged')
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+
+" show modified lines in the left gutter
+" ]c and [c jump to next and previous hunk
+" :GitGutterFold keeps only modifications
+" more about staging and undoing chunks: https://github.com/airblade/vim-gitgutter#hunks
 Plug 'https://github.com/airblade/vim-gitgutter'
+
 "Plug 'https://github.com/Canop/patine'
 Plug '~/dev/patine'
 Plug 'https://github.com/tpope/vim-fugitive.git'
@@ -22,7 +28,24 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'rust-lang/rust.vim'
 "Plug 'racer-rust/vim-racer'
 Plug 'zxqfl/tabnine-vim'
+
+" easymotion add shortcuts leader-leader-w, leader-leader-l, leader-leader-f
+" which, when followed by a letter, will highlight places where we can then
+" jump with just a letter
+Plug 'easymotion/vim-easymotion'
+
+" add the :GenTocGFM command to generate a markdown TOC. As the toc is
+" auto-updated, one may want to use :RemoveToc
+" Plug 'mzlogin/vim-markdown-toc'
+
+Plug 'https://gitlab.com/lstwn/broot.vim'
+
 call plug#end()
+
+" Plugins I should try to make work:
+"https://github.com/junegunn/fzf.vim
+"https://github.com/neoclide/coc.nvim " is it so slow it's useless ? or was
+"there a bug in the config ?
 
 
 """""""""""""""""""" Colors
@@ -62,6 +85,10 @@ nnoremap <esc> :noh<return><esc>
 set inccommand=nosplit
 
 set history=1000
+
+" I want all saves to be visible from inotify, so I need to change
+" the backup strategy
+set nowritebackup
 
 """"""""""""""""""""" For Terminator
 
@@ -219,3 +246,31 @@ au FileType rust nmap gd <Plug>(rust-def)
 au FileType rust nmap gs <Plug>(rust-def-split)
 au FileType rust nmap gx <Plug>(rust-def-vertical)
 au FileType rust nmap <leader>gd <Plug>(rust-doc)
+
+"""""""""""""""""""" Broot
+
+nnoremap <silent> <leader>b :Broot<CR>
+
+" you might want to:
+command! BrootWorkingDirectoryNewTab call g:OpenBrootIn(".", "tabedit")
+
+" adjust path to config (this defaults to '~/.config/broot/conf.toml'):
+let g:broot_default_conf_path = "~/.config/broot/conf.toml"
+
+" set this to replace netrw with broot (off per default):
+"let g:broot_replace_netrw = 1
+
+" if you want to change the config that is appended on top of your regular
+" broot conf.toml set this array of strings (default shown):
+let g:broot_vim_conf = [
+            \ '[[verbs]]',
+            \ 'key = "enter"',
+            \ 'execution = ":print_path"',
+            \ 'apply_to = "file"',
+            \ ]
+
+" adjust broot command with (this defaults to 'br'):
+let g:broot_command = 'br'
+
+" adjust default edit/open command (this defaults to 'edit'):
+" let g:broot_default_edit_command = 'tabedit'
