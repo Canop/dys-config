@@ -1,3 +1,5 @@
+# this file is managed in dev/dys-config
+
 alias mdb="psql -U miaou -W miaou"
 alias shd="ssh dystroy.org"
 alias sh1="ssh dseguret@dev1.keods.net"
@@ -12,3 +14,5 @@ alias cck="cargo watch -s 'cargo check --color always 2>&1 | head -n 50'"
 # scm-breeze
 [ -s "/home/dys/.scm_breeze/scm_breeze.sh" ] && source "/home/dys/.scm_breeze/scm_breeze.sh"
 export GIT_REPO_DIR="$HOME/dev"
+
+alias bo="br --conf ~/.config/broot/select.toml"
