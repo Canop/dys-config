@@ -11,8 +11,8 @@ call plug#begin('~/.local/share/nvim/plugged')
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'https://github.com/airblade/vim-gitgutter'
-"Plug 'https://github.com/Canop/patine'
-Plug '~/dev/patine'
+Plug 'https://github.com/Canop/patine'
+"Plug '~/dev/patine'
 Plug 'https://github.com/tpope/vim-fugitive.git'
 Plug 'https://github.com/tpope/vim-abolish'
 Plug 'https://github.com/othree/yajs.vim'
@@ -22,6 +22,8 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'rust-lang/rust.vim'
 "Plug 'racer-rust/vim-racer'
 Plug 'zxqfl/tabnine-vim'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 call plug#end()
 
 
@@ -91,6 +93,7 @@ set hidden
 
 autocmd FileType gradle setlocal shiftwidth=2 tabstop=2
 autocmd FileType pug setlocal shiftwidth=2 tabstop=2
+autocmd FileType rs setlocal shiftwidth=4 tabstop=4
 
 " speed up searches in node projects
 set wildignore+=**/node_modules/**
