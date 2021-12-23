@@ -145,6 +145,10 @@ nnoremap <c-p> :w<cr>:FZF<cr>
 nnoremap <Leader>cl yiwoconsole.log('<c-r>":', <c-r>");<Esc>^
 nnoremap <Leader>cL yiwOconsole.log('<c-r>":', <c-r>");<Esc>^
 
+" debug! word under cursor
+nnoremap <Leader>d yiwodebug!("<c-r>"={:?}", &<c-r>");<Esc>^
+nnoremap <Leader>D yiwOdebug!("<c-r>"={:?}", &<c-r>");<Esc>^
+
 " and the same for rust...
 nnoremap <Leader>db yiwodebug!("<c-r>"={:?}", &<c-r>");<Esc>^
 
@@ -275,3 +279,34 @@ let g:broot_command = 'br'
 
 " adjust default edit/open command (this defaults to 'edit'):
 " let g:broot_default_edit_command = 'tabedit'
+
+
+
+""""""""""""""""""""""""""""""""""""""""""""""
+" Indentation management
+""""""""""""""""""""""""""""""""""""""""""""""
+" By default, use spaced tabs.
+set expandtab
+
+" Display tabs as 4 spaces wide. When expandtab is set, use 4 spaces.
+set shiftwidth=4
+set tabstop=4
+
+function TabsOrSpaces()
+    " Determines whether to use spaces or tabs on the current buffer.
+    if getfsize(bufname("%")) > 256000
+        " File is very large, just use the default.
+        return
+    endif
+
+    let numTabs=len(filter(getbufline(bufname("%"), 1, 250), 'v:val =~ "^\\t"'))
+    let numSpaces=len(filter(getbufline(bufname("%"), 1, 250), 'v:val =~ "^ "'))
+
+    if numTabs > numSpaces
+        setlocal noexpandtab
+    endif
+endfunction
+
+" Call the function after opening a buffer
+autocmd BufReadPost * call TabsOrSpaces()
+""""""""""""""""""""""""""""""""""""""""""""""

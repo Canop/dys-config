@@ -1,4 +1,5 @@
 # this file is managed in dev/dys-config
+# See https://dystroy.org/blog/gg/
 
 default_flags = "hd"
 
@@ -30,6 +31,13 @@ shortcut = "ga"
 key = "ctrl-a"
 leave_broot = false
 execution = "git add {file}"
+apply_to = "file"
+
+[[verbs]]
+invocation = "git_checkout"
+shortcut = "gco"
+leave_broot = false
+execution = "git checkout {file}"
 apply_to = "file"
 
 [skin]
