@@ -1,7 +1,7 @@
 
 .PHONY: clean install vim tmux nvim bash git broot
 
-install: vim tmux nvim bash git broot
+install: tmux nvim nvim_lua bash git broot
 
 # vim: ./vim/vimrc
 # 	cp $< ~/.vim/
@@ -14,6 +14,9 @@ tmux: ./tmux/tmux.conf
 
 nvim: ./nvim/init.vim
 	cp $< ~/.config/nvim/init.vim
+
+nvim_lua: ./nvim/lua/init.lua
+	cp $< ~/.config/nvim/lua/init.lua
 
 git: git_ignore git_config
 

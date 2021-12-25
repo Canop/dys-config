@@ -16,12 +16,13 @@ Plug 'vim-airline/vim-airline-themes'
 " :GitGutterFold keeps only modifications
 " more about staging and undoing chunks: https://github.com/airblade/vim-gitgutter#hunks
 Plug 'https://github.com/airblade/vim-gitgutter'
-Plug 'https://github.com/Canop/patine'
+"Plug 'https://github.com/Canop/patine'
 "Plug '~/dev/patine'
-Plug 'https://github.com/tpope/vim-fugitive.git'
+"Plug 'https://github.com/tpope/vim-fugitive.git'
 Plug 'https://github.com/tpope/vim-abolish'
 Plug 'https://github.com/othree/yajs.vim'
 Plug 'https://github.com/othree/es.next.syntax.vim'
+Plug 'https://github.com/cocopon/iceberg.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 "Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'rust-lang/rust.vim'
@@ -29,6 +30,11 @@ Plug 'rust-lang/rust.vim'
 Plug 'zxqfl/tabnine-vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+
+" buffers
+Plug 'kyazdani42/nvim-web-devicons' " Recommended (for coloured icons)
+"Plug 'ryanoasis/vim-devicons'
+Plug 'akinsho/bufferline.nvim'
 
 " easymotion add shortcuts leader-leader-w, leader-leader-l, leader-leader-f
 " which, when followed by a letter, will highlight places where we can then
@@ -51,7 +57,7 @@ call plug#end()
 
 """""""""""""""""""" Colors
 
-colorscheme patine
+colorscheme iceberg
 
 " for vim-airline
 set laststatus=2
@@ -255,7 +261,7 @@ au FileType rust nmap <leader>gd <Plug>(rust-doc)
 
 """""""""""""""""""" Broot
 
-nnoremap <silent> <leader>b :Broot<CR>
+" nnoremap <silent> <leader>b :Broot<CR>
 
 " you might want to:
 command! BrootWorkingDirectoryNewTab call g:OpenBrootIn(".", "tabedit")
@@ -311,3 +317,7 @@ endfunction
 " Call the function after opening a buffer
 autocmd BufReadPost * call TabsOrSpaces()
 """"""""""""""""""""""""""""""""""""""""""""""
+
+" https://github.com/akinsho/bufferline.nvim
+nnoremap <silent> gb :BufferLinePick<CR>
+lua require('init')
