@@ -18,6 +18,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'https://github.com/airblade/vim-gitgutter'
 "Plug 'https://github.com/Canop/patine'
 "Plug '~/dev/patine'
+Plug 'https://github.com/tpope/vim-fugitive'
 Plug 'https://github.com/tpope/vim-abolish'
 Plug 'https://github.com/othree/yajs.vim'
 Plug 'https://github.com/othree/es.next.syntax.vim'
@@ -44,7 +45,7 @@ Plug 'easymotion/vim-easymotion'
 " auto-updated, one may want to use :RemoveToc
 " Plug 'mzlogin/vim-markdown-toc'
 
-Plug 'https://gitlab.com/lstwn/broot.vim'
+" Plug 'https://gitlab.com/lstwn/broot.vim'
 
 call plug#end()
 
