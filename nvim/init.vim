@@ -184,9 +184,6 @@ nnoremap <Leader>ff :w<CR>yiw:vim /\<<C-R>"\>/ <C-R>=expand("%:p:h") . "/*" <CR>
 " find current word in current repository using gitgrep
 nnoremap <Leader>gg :w<CR>yiw:Ggrep <C-R>" <CR>
 
-" find current word in current directory using ballish
-nnoremap <Leader>bb :w<CR>yiw:BallishGrepInRepository <C-R>"  <CR>
-
 " go to next file
 nnoremap ù :w<CR>:cn<CR>
 
