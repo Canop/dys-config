@@ -16,3 +16,4 @@ alias cck="cargo watch -s 'cargo check --color always 2>&1 | head -n 50'"
 export GIT_REPO_DIR="$HOME/dev"
 
 alias bo="br --conf ~/.config/broot/select.toml"
+alias lsd="br --sort-by-date"

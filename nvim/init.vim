@@ -8,6 +8,8 @@ if empty(glob('~/.local/share/nvim/site/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.local/share/nvim/plugged')
+
+Plug '~/dev/nvim-bacon'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
@@ -144,6 +146,9 @@ augroup end
 """""""""""""""""""" Keys & Shortcuts
 
 let mapleader="\<space>"
+
+" change buffer
+nnoremap <Leader>l :ls<CR>:b<Space>
 
 " find files using FZF
 nnoremap <c-p> :w<cr>:FZF<cr>
@@ -318,3 +323,10 @@ autocmd BufReadPost * call TabsOrSpaces()
 " https://github.com/akinsho/bufferline.nvim
 nnoremap <silent> gb :BufferLinePick<CR>
 lua require('init')
+
+"""""""""""""""""""""""""""""""""""""""""""""
+" bacon shortcuts
+"""""""""""""""""""""""""""""""""""""""""""""
+
+nnoremap ! :BaconLoad<CR>:w<CR>:BaconNext<CR>
+nnoremap , :BaconList<CR>
