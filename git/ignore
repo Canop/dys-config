@@ -12,4 +12,5 @@ dys-notes.md
 
 # edition byproducts
 *.swp
+.bacon-locations
 
