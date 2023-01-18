@@ -15,3 +15,4 @@ alias glp="git log --patch"
 export GIT_REPO_DIR="$HOME/dev"
 
 alias bo="br --conf ~/.config/broot/select.toml"
+alias lsd="br --sort-by-date"

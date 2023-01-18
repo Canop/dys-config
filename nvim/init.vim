@@ -10,9 +10,6 @@ endif
 call plug#begin('~/.local/share/nvim/plugged')
 
 Plug '~/dev/nvim-bacon'
-" Plug '~/dev/nvim-buse'
-" Plug '~/dev/nvim-bucho'
-
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
@@ -150,6 +147,9 @@ augroup end
 
 let mapleader="\<space>"
 
+" change buffer
+nnoremap <Leader>l :ls<CR>:b<Space>
+
 " find files using FZF
 nnoremap <c-p> :w<cr>:FZF<cr>
 
@@ -190,9 +190,6 @@ nnoremap <Leader>ff :w<CR>yiw:vim /\<<C-R>"\>/ <C-R>=expand("%:p:h") . "/*" <CR>
 
 " find current word in current repository using gitgrep
 nnoremap <Leader>gg :w<CR>yiw:Ggrep <C-R>" <CR>
-
-" find current word in current directory using ballish
-nnoremap <Leader>bb :w<CR>yiw:BallishGrepInRepository <C-R>"  <CR>
 
 " go to next file
 nnoremap ù :w<CR>:cn<CR>
@@ -332,3 +329,10 @@ nnoremap ! :BaconLoad<CR>:w<CR>:BaconNext<CR>
 nnoremap , :BaconList<CR>
 
 lua require('init')
+
+"""""""""""""""""""""""""""""""""""""""""""""
+" bacon shortcuts
+"""""""""""""""""""""""""""""""""""""""""""""
+
+nnoremap ! :BaconLoad<CR>:w<CR>:BaconNext<CR>
+nnoremap , :BaconList<CR>
