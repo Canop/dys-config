@@ -9,10 +9,8 @@ endif
 
 call plug#begin('~/.local/share/nvim/plugged')
 
-Plug '~/dev/nvim-bacon'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-
 " show modified lines in the left gutter
 " ]c and [c jump to next and previous hunk
 " :GitGutterFold keeps only modifications
@@ -20,6 +18,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'https://github.com/airblade/vim-gitgutter'
 "Plug 'https://github.com/Canop/patine'
 "Plug '~/dev/patine'
+Plug '~/dev/nvim-bacon'
 Plug 'https://github.com/tpope/vim-fugitive'
 Plug 'https://github.com/tpope/vim-abolish'
 Plug 'https://github.com/othree/yajs.vim'
@@ -48,6 +47,10 @@ Plug 'easymotion/vim-easymotion'
 " Plug 'mzlogin/vim-markdown-toc'
 
 " Plug 'https://gitlab.com/lstwn/broot.vim'
+
+" see https://github.com/voldikss/vim-floaterm/issues/376
+" and https://github.com/voldikss/vim-floaterm#broot
+" Plug 'voldikss/vim-floaterm'
 
 call plug#end()
 
@@ -243,7 +246,7 @@ cnoreabbrev S Subvert
 
 " display current markdown file as HTML in browser
 " (grip must be installed)
-nnoremap <Leader>md <Esc>:!grip -b %<CR><CR>
+nnoremap <Leader>md <Esc>:!wool -b %<CR><CR>
 
 nnoremap <Leader>-- yyp:s/./-/g<CR><Esc>
 
