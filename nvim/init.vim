@@ -28,13 +28,13 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 "Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'rust-lang/rust.vim'
 "Plug 'racer-rust/vim-racer'
-Plug 'zxqfl/tabnine-vim'
+"Plug 'zxqfl/tabnine-vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
 " buffers
-Plug 'kyazdani42/nvim-web-devicons' " Recommended (for coloured icons)
-"Plug 'ryanoasis/vim-devicons'
+" Plug 'kyazdani42/nvim-web-devicons' " Recommended (for coloured icons)
+" Plug 'ryanoasis/vim-devicons'
 " Plug 'akinsho/bufferline.nvim'
 
 " easymotion add shortcuts leader-leader-w, leader-leader-l, leader-leader-f
@@ -73,6 +73,7 @@ let g:airline#extensions#hunks#enabled=0
 let g:airline_detect_spell=0
 let g:airline#parts#ffenc#skip_expected_string='utf-8[unix]'
 let g:airline#extensions#whitespace#checks = [ 'indent', 'trailing', 'long']
+let g:airline#extensions#tabline#enabled = 1
 
 """"""""""""""""""""" Global Behavior
 
@@ -245,7 +246,7 @@ cnoreabbrev S Subvert
 """""""""""""""""""" Markdown
 
 " display current markdown file as HTML in browser
-" (grip must be installed)
+" (wool must be installed - it's a better grip clone)
 nnoremap <Leader>md <Esc>:!wool -b %<CR><CR>
 
 nnoremap <Leader>-- yyp:s/./-/g<CR><Esc>
