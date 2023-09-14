@@ -11,3 +11,11 @@ require("bufferline").setup {
             always_show_bufferline = false,
         }
 }
+
+require("bacon").setup {
+    quickfix  = {
+         enabled = false,
+         event_trigger = false
+    },
+    autoload = false
+}

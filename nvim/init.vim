@@ -240,10 +240,15 @@ cnoreabbrev S Subvert
 """""""""""""""""""" Markdown
 
 " display current markdown file as HTML in browser
-" (grip must be installed)
-nnoremap <Leader>md <Esc>:!grip -b %<CR><CR>
+" (wool must be installed)
+nnoremap <Leader>md <Esc>:!wool -b %<CR><CR>
 
 nnoremap <Leader>-- yyp:s/./-/g<CR><Esc>
+
+"""""""""""""""""""" Rust
+
+" format imports
+nnoremap <Leader>fi <Esc>:!rustfmt --config imports_granularity=one,imports_layout=vertical --edition 2021  %<CR><CR>
 
 """""""""""""""""""" Git
 
