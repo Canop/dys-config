@@ -1,7 +1,4 @@
 
-require "paq" { 
-  'akinsho/nvim-bufferline.lua'
-}
 
 vim.opt.number = true
 vim.opt.termguicolors = true

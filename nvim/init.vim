@@ -9,10 +9,8 @@ endif
 
 call plug#begin('~/.local/share/nvim/plugged')
 
-Plug '~/dev/nvim-bacon'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-
 " show modified lines in the left gutter
 " ]c and [c jump to next and previous hunk
 " :GitGutterFold keeps only modifications
@@ -20,6 +18,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'https://github.com/airblade/vim-gitgutter'
 "Plug 'https://github.com/Canop/patine'
 "Plug '~/dev/patine'
+Plug '~/dev/nvim-bacon'
 Plug 'https://github.com/tpope/vim-fugitive'
 Plug 'https://github.com/tpope/vim-abolish'
 Plug 'https://github.com/othree/yajs.vim'
@@ -36,7 +35,7 @@ Plug 'junegunn/fzf.vim'
 " buffers
 Plug 'kyazdani42/nvim-web-devicons' " Recommended (for coloured icons)
 "Plug 'ryanoasis/vim-devicons'
-Plug 'akinsho/bufferline.nvim'
+" Plug 'akinsho/bufferline.nvim'
 
 " easymotion add shortcuts leader-leader-w, leader-leader-l, leader-leader-f
 " which, when followed by a letter, will highlight places where we can then
@@ -48,6 +47,10 @@ Plug 'easymotion/vim-easymotion'
 " Plug 'mzlogin/vim-markdown-toc'
 
 " Plug 'https://gitlab.com/lstwn/broot.vim'
+
+" see https://github.com/voldikss/vim-floaterm/issues/376
+" and https://github.com/voldikss/vim-floaterm#broot
+" Plug 'voldikss/vim-floaterm'
 
 call plug#end()
 
@@ -176,6 +179,8 @@ nnoremap <Leader>Q ciW""<Esc>P
 " gp selects the last selection
 nnoremap gp `[v`]
 
+nnoremap <Leader>l :ls<CR>:b<Space>
+
 " open a file in current file's directory
 nnoremap <Leader>e :w<CR>:e <C-R>=expand("%:p:h") . "/" <CR>
 nnoremap <Leader>sp :split <C-R>=expand("%:p:h") . "/" <CR>
@@ -241,6 +246,7 @@ cnoreabbrev S Subvert
 
 " display current markdown file as HTML in browser
 " (wool must be installed)
+>>>>>>> origin/master
 nnoremap <Leader>md <Esc>:!wool -b %<CR><CR>
 
 nnoremap <Leader>-- yyp:s/./-/g<CR><Esc>
@@ -307,11 +313,11 @@ set shiftwidth=4
 set tabstop=4
 
 function TabsOrSpaces()
-    " Determines whether to use spaces or tabs on the current buffer.
-    if getfsize(bufname("%")) > 256000
-        " File is very large, just use the default.
-        return
-    endif
+    " " Determines whether to use spaces or tabs on the current buffer.
+    " if getfsize(bufname("%")) > 956000
+    "     " File is very large, just use the default.
+    "     return
+    " endif
 
     let numTabs=len(filter(getbufline(bufname("%"), 1, 250), 'v:val =~ "^\\t"'))
     let numSpaces=len(filter(getbufline(bufname("%"), 1, 250), 'v:val =~ "^ "'))
@@ -326,7 +332,11 @@ autocmd BufReadPost * call TabsOrSpaces()
 """"""""""""""""""""""""""""""""""""""""""""""
 
 " https://github.com/akinsho/bufferline.nvim
-nnoremap <silent> gb :BufferLinePick<CR>
+" nnoremap <silent> gb :BufferLinePick<CR>
+
+nnoremap ! :BaconLoad<CR>:w<CR>:BaconNext<CR>
+nnoremap , :BaconList<CR>
+
 lua require('init')
 
 """""""""""""""""""""""""""""""""""""""""""""

@@ -9,7 +9,6 @@ alias :q=exit
 alias :c="rm ~/.local/share/nvim/swap/*"
 alias todo=":e ~/todo.txt"
 alias glp="git log --patch"
-alias cck="cargo watch -s 'cargo check --color always 2>&1 | head -n 50'"
 
 # scm-breeze
 [ -s "/home/dys/.scm_breeze/scm_breeze.sh" ] && source "/home/dys/.scm_breeze/scm_breeze.sh"
