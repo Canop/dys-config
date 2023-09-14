@@ -35,7 +35,7 @@ Plug 'junegunn/fzf.vim'
 " buffers
 Plug 'kyazdani42/nvim-web-devicons' " Recommended (for coloured icons)
 "Plug 'ryanoasis/vim-devicons'
-" Plug 'akinsho/bufferline.nvim'
+Plug 'akinsho/bufferline.nvim'
 
 " easymotion add shortcuts leader-leader-w, leader-leader-l, leader-leader-f
 " which, when followed by a letter, will highlight places where we can then
@@ -246,7 +246,6 @@ cnoreabbrev S Subvert
 
 " display current markdown file as HTML in browser
 " (wool must be installed)
->>>>>>> origin/master
 nnoremap <Leader>md <Esc>:!wool -b %<CR><CR>
 
 nnoremap <Leader>-- yyp:s/./-/g<CR><Esc>
@@ -332,7 +331,7 @@ autocmd BufReadPost * call TabsOrSpaces()
 """"""""""""""""""""""""""""""""""""""""""""""
 
 " https://github.com/akinsho/bufferline.nvim
-" nnoremap <silent> gb :BufferLinePick<CR>
+nnoremap <silent> gb :BufferLinePick<CR>
 
 nnoremap ! :BaconLoad<CR>:w<CR>:BaconNext<CR>
 nnoremap , :BaconList<CR>
