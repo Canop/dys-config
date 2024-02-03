@@ -125,6 +125,9 @@ let g:deoplete#enable_at_startup = 1
 " Make escape work in the Neovim terminal.
 tnoremap <Esc> <C-\><C-n>
 
+" Make the title of the terminal the name of the edited file
+" set title
+
 """"""""""""""""""""" Files
 
 set hidden
@@ -300,6 +303,17 @@ let g:broot_command = 'br'
 " adjust default edit/open command (this defaults to 'edit'):
 " let g:broot_default_edit_command = 'tabedit'
 
+
+
+""""""""""""""""""""""""""""""""""""""""""""""
+" Copilot
+""""""""""""""""""""""""""""""""""""""""""""""
+
+let g:copilot_filetypes = {
+            \ '*': v:false,
+            \ 'rust': v:true,
+            \ 'javascript': v:true,
+            \ }
 
 
 """"""""""""""""""""""""""""""""""""""""""""""
